@@ -11,7 +11,8 @@ const AuthProvider = ({ children }) => {
     try {
       const value = await AsyncStorage.getItem("name");
       if (value !== null) {
-        setName(value)
+        setName(JSON.parse(value))
+
       }
     } catch (e) {
       // error reading value
@@ -20,7 +21,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     getData()
-  });
+  }, []);
 
   return (
     <AuthContext.Provider value={{ name, setName }}>

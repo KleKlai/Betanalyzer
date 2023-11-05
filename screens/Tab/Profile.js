@@ -40,9 +40,7 @@ const Profile = ({ navigation }) => {
             }}
             style={styles.profileImage}
           />
-          <Text style={styles.ProfileName}>
-            Welcome back, {JSON.parse(name)}
-          </Text>
+          <Text style={styles.ProfileName}>Welcome back, {name}</Text>
         </View>
         <View>
           <TouchableOpacity
@@ -50,7 +48,7 @@ const Profile = ({ navigation }) => {
               styles.deleteAccountBtn,
               { marginBottom: 10, backgroundColor: "#1E88E5" },
             ]}
-            onPress={() => navigation.navigate('Register')}
+            onPress={() => navigation.navigate("Register")}
           >
             <Text style={styles.deleteAccountTxt}>Register</Text>
           </TouchableOpacity>

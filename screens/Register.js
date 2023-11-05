@@ -10,9 +10,6 @@ const Register = () => {
         uri: "https://www.clashodds.com.ph",
       }}
     />
-    // <View>
-    //   <Text>Test</Text>
-    // </View>
   );
 };
 

@@ -4,8 +4,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons"; // For Icons
 
 // Screens
-import Home from "../screens/Home";
 import Transaction from "../screens/Tab/Transactions";
+import HomeNavigator from "./HomeNavigator";
 import ProfileNavigator from "./ProfileNavigator";
 
 const Tab = createBottomTabNavigator();
@@ -46,7 +46,7 @@ const TabNavigator = () => {
 
   return (
     <Tab.Navigator {...{ screenOptions }}>
-      <Tab.Screen name="HomeTab" component={Home} options={{title: 'Home'}} />
+      <Tab.Screen name="HomeTab" component={HomeNavigator} options={{title: 'Home'}} />
       <Tab.Screen name="TransactionTab" component={Transaction} options={{title: 'Transaction'}} />
       <Tab.Screen name="ProfileTab" component={ProfileNavigator} options={{title: 'Profile'}} />
     </Tab.Navigator>
