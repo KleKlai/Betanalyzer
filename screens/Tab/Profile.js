@@ -1,45 +1,70 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
 import React, { useContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import bgImage from "../../assets/images/bgImage.png";
 import { AuthContext } from "../../Global/AuthContext";
 
-const Profile = () => {
+// Screens
+import Register from "../Register";
 
-  const {name, setName} = useContext(AuthContext);
+const Profile = ({ navigation }) => {
+  const { name, setName } = useContext(AuthContext);
 
   clearData = async () => {
     try {
-      await AsyncStorage.clear()
-      setName(null)
-    } catch(e) {
-      console.log(`Error clearing data: ${e}`)
+      await AsyncStorage.clear();
+      setName(null);
+    } catch (e) {
+      console.log(`Error clearing data: ${e}`);
     }
-  }
+  };
 
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require('../../assets/images/bgImage.png')}
+        source={require("../../assets/images/bgImage.png")}
         resizeMode="cover"
-        style={{flex: 1, justifyContent: 'center',}}
+        style={{ flex: 1, justifyContent: "center" }}
       >
         <View style={styles.profileContainer}>
-        <Image
-          source={{
-            uri: `https://ui-avatars.com/api/?name=${name}&size=512&rounded=true&bold=true`,
-          }}
-          style={styles.profileImage}
-        />
-        <Text style={styles.ProfileName}>Welcome back, {JSON.parse(name)}</Text>
-      </View>
-      <View>
-        <TouchableOpacity style={styles.deleteAccountBtn} onPress={clearData}>
-          <Text style={styles.deleteAccountTxt}>Delete Account</Text>
-        </TouchableOpacity>
-      </View>
+          <Image
+            source={{
+              uri: `https://ui-avatars.com/api/?name=${name}&size=512&rounded=true&bold=true`,
+            }}
+            style={styles.profileImage}
+          />
+          <Text style={styles.ProfileName}>
+            Welcome back, {JSON.parse(name)}
+          </Text>
+        </View>
+        <View>
+          <TouchableOpacity
+            style={[
+              styles.deleteAccountBtn,
+              { marginBottom: 10, backgroundColor: "#1E88E5" },
+            ]}
+            onPress={() => navigation.navigate('Register')}
+          >
+            <Text style={styles.deleteAccountTxt}>Register</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.deleteAccountBtn,
+              { marginBottom: 30, backgroundColor: "#1E88E5" },
+            ]}
+            onPress={clearData}
+          >
+            <Text style={styles.deleteAccountTxt}>Delete Account</Text>
+          </TouchableOpacity>
+        </View>
       </ImageBackground>
-      
     </View>
   );
 };
@@ -67,14 +92,12 @@ const styles = StyleSheet.create({
   },
   ProfileName: {
     fontSize: 20,
-    fontWeight: '500',
+    fontWeight: "500",
   },
   deleteAccountBtn: {
-    backgroundColor: "#1E88E5",
     padding: 15,
     borderRadius: 15,
     color: "#FFF",
-    marginBottom: 30,
   },
   deleteAccountTxt: {
     color: "#FFF",
