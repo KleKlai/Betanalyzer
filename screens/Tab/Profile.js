@@ -50,7 +50,7 @@ const Profile = ({ navigation }) => {
             ]}
             onPress={() => navigation.navigate("Register")}
           >
-            <Text style={styles.deleteAccountTxt}>Register</Text>
+            <Text style={styles.deleteAccountTxt}>Register Now</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[

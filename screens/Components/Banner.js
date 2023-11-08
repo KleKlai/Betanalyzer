@@ -19,6 +19,8 @@ const images = [
   "https://d3d9lsu8c2flig.cloudfront.net/si-upload/2023-09-29/promo-banner-137045384200-1695953320.jpg",
 ];
 
+import BannerModel from '../../model/BannerModel'
+
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
 
@@ -54,7 +56,7 @@ const Banner = ({ navigation }) => {
         horizontal={true}
         style={styles.wrap}
       >
-        {images.map((image, index) => (
+        {BannerModel.map((data, index) => (
           <TouchableOpacity key={index} onPress={() =>
             navigation.navigate('Register')
           }>
@@ -62,9 +64,7 @@ const Banner = ({ navigation }) => {
             key={index}
             resizeMode='contain'
             style={styles.wrap}
-            source={{
-              uri: image,
-            }}
+            source={data.image}
           />
           </TouchableOpacity>
         ))}

@@ -1,7 +1,7 @@
 export default [
     {
       id: 1,
-      title: "Welcome to BetAnalyzer",
+      title: "Welcome to SWC - ClashOdds",
       description:
         "BetAnalyzer is your tool for recording bets and analyzing your decisions.",
       image: require('../assets/images/welcome.png'),

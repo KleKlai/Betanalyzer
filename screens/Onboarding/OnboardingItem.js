@@ -48,6 +48,7 @@ import {
     description: {
       fontWeight: '300',
       color: '#62656b',
+      fontSize: 16,
       textAlign: 'center',
       paddingHorizontal: 64,
     },

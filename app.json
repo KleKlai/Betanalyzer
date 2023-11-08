@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Journal",
-    "slug": "Journal",
+    "name": "ClashOdds",
+    "slug": "ClashOdds",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon_v2.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash_v1.png",
+      "image": "./assets/splash_v2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.iwkyra.Journal"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "64e4379f-e8eb-486b-8228-b3134d9a131a"
+      }
     }
   }
 }
