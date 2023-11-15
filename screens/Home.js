@@ -19,6 +19,7 @@ import { AuthContext } from "../Global/AuthContext";
 import Banner from "./Components/Banner";
 import Form from "./Components/Form";
 import KeyboardAvoidingWrapper from "./Components/KeyboardAvoidingWrapper";
+import Toast from "react-native-toast-message";
 
 const Home = ({ navigation }) => {
   const { name } = useContext(AuthContext);
@@ -58,6 +59,7 @@ const Home = ({ navigation }) => {
           <Form />
         </View>
       </KeyboardAvoidingWrapper>
+      <Toast />
     </SafeAreaView>
   );
 };

@@ -45,17 +45,17 @@ const Profile = ({ navigation }) => {
         <View>
           <TouchableOpacity
             style={[
-              styles.deleteAccountBtn,
-              { marginBottom: 10, backgroundColor: "#1E88E5" },
+              styles.playBtn,
+              { marginBottom: 10},
             ]}
             onPress={() => navigation.navigate("Register")}
           >
-            <Text style={styles.deleteAccountTxt}>Register Now</Text>
+            <Text style={styles.deleteAccountTxt}>PLAY CLASSODDS</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[
               styles.deleteAccountBtn,
-              { marginBottom: 30, backgroundColor: "#1E88E5" },
+              { marginBottom: 30, backgroundColor: "#F44336" },
             ]}
             onPress={clearData}
           >
@@ -102,5 +102,10 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     fontSize: 15,
     textAlign: "center",
+  },
+  playBtn: {
+    padding: 15,
+    borderRadius: 15,
+    backgroundColor: '#FDD835',
   },
 });
